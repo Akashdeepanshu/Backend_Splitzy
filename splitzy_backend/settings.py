@@ -145,10 +145,5 @@ REST_FRAMEWORK = {
     ),
 }
 
-print("SECRET_KEY:", SECRET_KEY[:8], "...")
-print("DEBUG:", DEBUG)
-print("DB_HOST:", os.environ.get("DB_HOST"))
-
-
 
 
