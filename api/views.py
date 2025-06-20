@@ -43,7 +43,7 @@ def login_view(request):
             "Id": user.id
         }, status=200)
     else:
-    return Response(serializer.errors, status=400)
+        return Response(serializer.errors, status=400)
 
 
 class UserSearchView(APIView):
