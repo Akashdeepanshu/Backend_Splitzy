@@ -25,9 +25,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'unsafe-default-key')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = os.environ.get("DEBUG", "False") == "True"
 
-ALLOWED_HOSTS = ['.onrender.com', 'localhost']
+ALLOWED_HOSTS = ['https://backend-splitzy.onrender.com', 'localhost','127.0.0.1']
 
 
 # Application definition
@@ -144,6 +144,11 @@ REST_FRAMEWORK = {
         'rest_framework_simplejwt.authentication.JWTAuthentication',
     ),
 }
+
+print("SECRET_KEY:", SECRET_KEY[:8], "...")
+print("DEBUG:", DEBUG)
+print("DB_HOST:", os.environ.get("DB_HOST"))
+
 
 
 
